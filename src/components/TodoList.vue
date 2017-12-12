@@ -39,6 +39,11 @@
                 this.newTodo = {};
             },
             deleteTodoFromList : function(todo){
+
+                /**
+                 * TODO: This should be replaced with a loop and an id on the todoItem.
+                 */
+
                 this.todoList.splice(this.todoList.indexOf(todo), 1);
             }
         }
