@@ -11,6 +11,7 @@
             <li v-for="todo in todoList" v-bind:class="{todoDone : todo.done}">
                 <input type="checkbox" v-model="todo.done" />
                 {{todo.title}}
+                <button type="button" v-on:click="deleteTodoFromList(todo)">Delete</button>
             </li>
         </ul>
 
@@ -18,6 +19,7 @@
 </template>
 
 <script>
+
     export default {
         name: 'todolist',
         data () {  //  Fields availeble in component
@@ -33,13 +35,15 @@
 
                 this.todoList.push({ title : this.newTodo.title, done : false });
 
-                console.log(this.newTodo);
-
+                //  Reset object for next entry
                 this.newTodo = {};
-
+            },
+            deleteTodoFromList : function(todo){
+                this.todoList.splice(this.todoList.indexOf(todo), 1);
             }
         }
     }
+
 </script>
 
 <style scoped>
