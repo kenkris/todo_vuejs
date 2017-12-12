@@ -29,6 +29,11 @@
             }
         },
         methods : {  //  Methods available to component
+
+            /**
+             * Add todo list item to the list
+             * Data is set into newTodo object through model binding
+             */
             addTodoToList : function(event){
 
                 event.preventDefault();
@@ -38,6 +43,11 @@
                 //  Reset object for next entry
                 this.newTodo = {};
             },
+
+            /**
+             * Delete todoList item
+             * @param  object todo . Item to delete
+             */
             deleteTodoFromList : function(todo){
 
                 /**
